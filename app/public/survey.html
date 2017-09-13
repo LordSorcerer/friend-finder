@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Friend Finder App</title>
+    
+</head>
+
+<body>
+    <button type="submit" id="btnSubmit" value="submit" class="btn btn-primary">Submit</button>
+	
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- API Handler -->
+    <script type="text/javascript">
+    myUrl = "localhost";
+    $("#btnSubmit").on("click", function() {
+    	console.log("btnSubmit works");
+    	var data = "FISHMONGER!!!!";
+        $.post("/api/survey", data);
+    });
+    </script>
+</body>
+
+</html>
