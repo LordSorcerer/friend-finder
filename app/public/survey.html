@@ -285,15 +285,15 @@
                 submitReady = false;
             }
         }
-        if (submitReady === true) {
+     /*   if (submitReady === true) {*/
             newFriend.name = $("#name").val().trim();
             newFriend.imageURL = $("#image").val().trim();
             $.post("/api/survey", newFriend, function(data) {
                 console.log(data);
             });
-        } else {
+       /* } else {
 
-        }
+        }*/
     });
     </script>
 </body>

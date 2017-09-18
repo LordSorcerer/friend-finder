@@ -27,22 +27,28 @@ var apiRoutes = function(app) {
         var newFriend = req.body;
         var bestFriend = {
             index: 0,
-            compatibility: 0
+            //Set starting compatibility high for the comparison below
+            compatibility: 500
         };
+        console.log(newFriend.scores[0]);
         console.log(friendList);
         for (i = 0; i < friendList.length; i++) {
             var tempCompatibility = 0;
-            console.log("Length: " + friendList[i].scores.length);
             for (j = 0; j < friendList[i].scores.length; j++) {
+                tempCompatibility += Math.abs(parseInt(newFriend.scores[j]) - friendList[i].scores[j]);
                 console.log(tempCompatibility);
             }
-            if (tempCompatibility > bestFriend.compatibility) {
+            if (tempCompatibility < bestFriend.compatibility) {
                 bestFriend.index = i;
                 bestFriend.compatibility = tempCompatibility;
             }
         }
-        console.log()
+      
         friendList.push(req.body);
+        console.log(friendList[bestFriend.index]);
+        //Send the correct match back to the user
+        res.json(friendList[bestFriend.index])
+
     });
 
 
