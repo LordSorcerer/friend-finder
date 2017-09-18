@@ -3,20 +3,39 @@
 
 <head>
     <title>Friend Finder App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <!--  Bootstrap  -->
+    <link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css " integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M " crossorigin="anonymous ">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
-    <a href="/survey">
-        <button id="btnSurvey" type="button" class="btn btn-primary">Survey</button>
-    </a>
-    <a href="/api/friendList">
-        <button id="btnFriendlist" type="button" class="btn btn-primary">Friend List</button>
-    </a>
-
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="jumbotron col-md-8 text-center">
+                <h1>Friend Finder!</h1><br>
+                <h3>Welcome to the Friend Finder application.  Please take our survey and our system will find your most compatible friend match.  Make a new friend today!</h3>
+                <br>
+                <hr>
+                <br>
+                <a href="/survey ">
+                    <button id="btnSurvey " type="button " class="btn-lg btn-primary">
+                        </i>Survey</button>
+                </a>
+                <a href="/api/friendList ">
+                    <button id="btnFriendlist " type="button " class="btn-lg btn-primary ">Friend List</button>
+                </a>
+                <br>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 
 </html>

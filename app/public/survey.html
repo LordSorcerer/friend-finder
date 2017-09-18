@@ -3,23 +3,273 @@
 
 <head>
     <title>Friend Finder App</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 </head>
 
 <body>
-    <button type="submit" id="btnSubmit" value="submit" class="btn btn-primary">Submit</button>
-	
-
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="jumbotron col-md-6 text-center">
+                <h1>Friend Finder Survey</h1>
+                <br>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <div class="row container jumbotron">
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 1</h2>
+                <hr>
+                <br>
+                <h3>You find it easy to get along with most people.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 2</h2>
+                <hr>
+                <br>
+                <h3>You often get so lost in thought that you forget your surroundings.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 3</h2>
+                <hr>
+                <br>
+                <h3>You try to respond to your emails as soon as possible and can't stand a messy inbox.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 4</h2>
+                <hr>
+                <br>
+                <h3>You find it easy to stay relaxed and focused even under pressure.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 5</h2>
+                <hr>
+                <br>
+                <h3>You do not usually initiate conversations.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 6</h2>
+                <hr>
+                <br>
+                <h3>You rarely do something out of sheer curiosity.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 7</h2>
+                <hr>
+                <br>
+                <h3>You feel superior to other people.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 8</h2>
+                <hr>
+                <br>
+                <h3>Being organized is more important to you than being adaptable.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 9</h2>
+                <hr>
+                <br>
+                <h3>You are usually highly motivated and energetic.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+                <hr>
+                <h2>Question 10</h2>
+                <hr>
+                <br>
+                <h3>You find riddles and puzzles fascinating.</h3>
+                <br>
+                <div class="dropdown">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Answer
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <p class="dropdown-item" href="#" data-value=1>1 - Strongly Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=2>2 - Disagree</p>
+                        <p class="dropdown-item" href="#" data-value=3>3 - Neutral</p>
+                        <p class="dropdown-item" href="#" data-value=4>4 - Agree</p>
+                        <p class="dropdown-item" href="#" data-value=5>5 - Strongly Agree</p>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" id="btnSubmit" value="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br </div>
+    </div>
+    </div>
+    <!--  -->
+    <!--  -->
     <!-- API Handler -->
     <script type="text/javascript">
+    $(".dropdown-item").on('click', function() {
+        var dataVal = $(this).attr("data-value");
+        var tempHtmlButton = $(this).parent().parent().children(".answer");
+        tempHtmlButton.attr("data-value", dataVal);
+        console.log(tempHtmlButton.attr("data-value"));
+        tempHtmlButton.html($(this).html());
+    });
+
     myUrl = "localhost";
+
     $("#btnSubmit").on("click", function() {
-    	console.log("btnSubmit works");
-    	var data = "FISHMONGER!!!!";
+        console.log($("#q10").val());
+        var data = [];
+
         $.post("/api/survey", data);
     });
     </script>
