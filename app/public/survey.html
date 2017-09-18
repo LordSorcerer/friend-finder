@@ -4,8 +4,6 @@
 <head>
     <title>Friend Finder App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- popper.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <!-- Bootstrap -->
@@ -13,8 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -32,6 +30,12 @@
         </div>
         <div class="row container jumbotron">
             <div class="col-md-12 text-center">
+                <h2>Name</h2>
+                <textarea id="name"></textarea>
+                <h2>Image URL</h2>
+                <textarea id="image"></textarea>
+            </div>
+            <div class="col-md-12 text-center">
                 <br>
                 <hr>
                 <h2>Question 1</h2>
@@ -40,7 +44,7 @@
                 <h3>You find it easy to get along with most people.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=1>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -61,7 +65,7 @@
                 <h3>You often get so lost in thought that you forget your surroundings.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=2>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -82,7 +86,7 @@
                 <h3>You try to respond to your emails as soon as possible and can't stand a messy inbox.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=3>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -103,7 +107,7 @@
                 <h3>You find it easy to stay relaxed and focused even under pressure.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=4>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -124,7 +128,7 @@
                 <h3>You do not usually initiate conversations.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=5>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -145,7 +149,7 @@
                 <h3>You rarely do something out of sheer curiosity.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=6>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -166,7 +170,7 @@
                 <h3>You feel superior to other people.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=7>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -187,7 +191,7 @@
                 <h3>Being organized is more important to you than being adaptable.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=8>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -208,7 +212,7 @@
                 <h3>You are usually highly motivated and energetic.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=9>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -229,7 +233,7 @@
                 <h3>You find riddles and puzzles fascinating.</h3>
                 <br>
                 <div class="dropdown">
-                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn-lg btn-primary dropdown-toggle answer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-questionNum=10>
                         Answer
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -256,21 +260,40 @@
     <!--  -->
     <!-- API Handler -->
     <script type="text/javascript">
+    //All values start at 0 so we can make sure all questions have been answered before submitting
+    var newFriend = {
+        name: "",
+        image: "",
+        scores: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
+
     $(".dropdown-item").on('click', function() {
         var dataVal = $(this).attr("data-value");
         var tempHtmlButton = $(this).parent().parent().children(".answer");
         tempHtmlButton.attr("data-value", dataVal);
-        console.log(tempHtmlButton.attr("data-value"));
+        newFriend.scores[tempHtmlButton.attr("data-questionNum") - 1] = dataVal;
+        console.log(newFriend.scores);
         tempHtmlButton.html($(this).html());
     });
 
-    myUrl = "localhost";
+    var myUrl = "localhost";
 
     $("#btnSubmit").on("click", function() {
-        console.log($("#q10").val());
-        var data = [];
+        var submitReady = true;
+        for (i = 0; i < newFriend.scores.length; i++) {
+            if (newFriend.scores[i] === 0) {
+                submitReady = false;
+            }
+        }
+        if (submitReady === true) {
+            newFriend.name = $("#name").val().trim();
+            newFriend.imageURL = $("#image").val().trim();
+            $.post("/api/survey", newFriend, function(data) {
+                console.log(data);
+            });
+        } else {
 
-        $.post("/api/survey", data);
+        }
     });
     </script>
 </body>
