@@ -4,18 +4,18 @@
 <head>
     <title>Friend Finder App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- popper.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="background-color: darkblue">
     <br>
     <div class="container">
         <div class="row">
@@ -248,52 +248,76 @@
             </div>
         </div>
         <br>
-        <button type="submit" id="btnSubmit" value="submit" class="btn btn-primary">Submit</button>
+        <!-- Modal -->
+        <div class="container">
+            <div class="modal-lg fade" id="modalMatch" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Your match is...</h4>
+                        </div>
+                        <div class="modal-body" id="modalResults">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" id="btnSubmit" value="submit" class="btn-lg btn-warning">Submit</button>
         <br>
         <br>
         <br>
         <br>
-        <br </div>
-    </div>
+        <br>
     </div>
     <!--  -->
     <!--  -->
     <!-- API Handler -->
     <script type="text/javascript">
-    //All values start at 0 so we can make sure all questions have been answered before submitting
-    var newFriend = {
-        name: "",
-        image: "",
-        scores: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    }
+    $(document).ready(function() {
 
-    $(".dropdown-item").on('click', function() {
-        var dataVal = $(this).attr("data-value");
-        var tempHtmlButton = $(this).parent().parent().children(".answer");
-        tempHtmlButton.attr("data-value", dataVal);
-        newFriend.scores[tempHtmlButton.attr("data-questionNum") - 1] = dataVal;
-        console.log(newFriend.scores);
-        tempHtmlButton.html($(this).html());
-    });
 
-    var myUrl = "localhost";
-
-    $("#btnSubmit").on("click", function() {
-        var submitReady = true;
-        for (i = 0; i < newFriend.scores.length; i++) {
-            if (newFriend.scores[i] === 0) {
-                submitReady = false;
-            }
+        //All values start at 0 so we can make sure all questions have been answered before submitting
+        var newFriend = {
+            name: "",
+            imageURL: "",
+            scores: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
-     /*   if (submitReady === true) {*/
+
+        $(".dropdown-item").on('click', function() {
+            var dataVal = $(this).attr("data-value");
+            var tempHtmlButton = $(this).parent().parent().children(".answer");
+            tempHtmlButton.attr("data-value", dataVal);
+            newFriend.scores[tempHtmlButton.attr("data-questionNum") - 1] = dataVal;
+            console.log(newFriend.scores);
+            tempHtmlButton.html($(this).html());
+        });
+
+        var myUrl = "localhost";
+
+        $("#btnSubmit").on("click", function() {
+            var submitReady = true;
+            for (i = 0; i < newFriend.scores.length; i++) {
+                if (newFriend.scores[i] === 0) {
+                    submitReady = false;
+                }
+            }
+            /*   if (submitReady === true) {*/
             newFriend.name = $("#name").val().trim();
             newFriend.imageURL = $("#image").val().trim();
             $.post("/api/survey", newFriend, function(data) {
+                $("#modalResults").html("<h3>" + data.name + "</h3><img src='" + data.imageURL + "'></img>");
+                $("#modalMatch").modal();
                 console.log(data);
             });
-       /* } else {
+            /* } else {
 
-        }*/
+             }*/
+        });
     });
     </script>
 </body>
