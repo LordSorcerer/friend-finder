@@ -248,17 +248,19 @@
             </div>
         </div>
         <br>
-        <!-- Modal -->
         <div class="container">
-            <div class="modal-lg fade" id="modalMatch" role="dialog">
+            <!-- Modal -->
+            <div class="modal fade" id="modalMatch" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Your match is...</h4>
+                            <h4 class="modal-title"></h4>
                         </div>
-                        <div class="modal-body" id="modalResults">
+                        <div class="modal-body">
+                            <div id="modalResults">
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -287,7 +289,7 @@
             imageURL: "",
             scores: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
-
+        //Handles all dropdown selections and modifies the newFriend object's scores array
         $(".dropdown-item").on('click', function() {
             var dataVal = $(this).attr("data-value");
             var tempHtmlButton = $(this).parent().parent().children(".answer");
@@ -306,17 +308,19 @@
                     submitReady = false;
                 }
             }
-            /*   if (submitReady === true) {*/
-            newFriend.name = $("#name").val().trim();
-            newFriend.imageURL = $("#image").val().trim();
-            $.post("/api/survey", newFriend, function(data) {
-                $("#modalResults").html("<h3>" + data.name + "</h3><img src='" + data.imageURL + "'></img>");
-                $("#modalMatch").modal();
-                console.log(data);
-            });
-            /* } else {
-
-             }*/
+            if (submitReady === true) {
+                newFriend.name = $("#name").val().trim();
+                newFriend.imageURL = $("#image").val().trim();
+                $.post("/api/survey", newFriend, function(data) {
+                    console.log(data.imageUrl);
+                    //In the future, pass the HTML string via the server
+                    $("#modalResults").html("<h3>" + data.name + "</h3><img class='img-fluid' src='" + data.imageUrl + "'></img>");
+                    $("#modalMatch").modal('toggle');
+                });
+            } else {
+                $("#modalResults").html("<h3>Please fill out all the fields before submitting!</h3>");
+                $("#modalMatch").modal('toggle');
+            }
         });
     });
     </script>

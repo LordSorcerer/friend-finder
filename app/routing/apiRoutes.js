@@ -8,11 +8,6 @@ var apiRoutes = function(app) {
         res.json(friendList);
     });
 
-   //Default catchall
-    app.get("*", function(req, res) {
-        res.send("404 - Page not found!");
-    });
-
     app.post("/api/survey", function(req, res) {
         var newFriend = req.body;
         var bestFriend = {
@@ -20,13 +15,10 @@ var apiRoutes = function(app) {
             //Set starting compatibility high for the comparison below
             compatibility: 500
         };
-        console.log(newFriend.scores[0]);
-        console.log(friendList);
         for (i = 0; i < friendList.length; i++) {
             var tempCompatibility = 0;
             for (j = 0; j < friendList[i].scores.length; j++) {
                 tempCompatibility += Math.abs(parseInt(newFriend.scores[j]) - friendList[i].scores[j]);
-                console.log(tempCompatibility);
             }
             if (tempCompatibility < bestFriend.compatibility) {
                 bestFriend.index = i;
